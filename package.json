@@ -8,10 +8,23 @@
         "lintFix": "stylelint ./**/*.{css,scss} --fix"
     },
     "devDependencies": {
+        "browser-sync": "^3.0.2",
+        "del": "^6.0.0",
+        "gulp": "^5.0.0",
+        "gulp-autoprefixer": "^8.0.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-plumber": "^1.2.1",
+        "gulp-sass": "^5.1.0",
+        "gulp-uglify-es": "^3.0.0",
+        "html-minifier": "^4.0.0",
+        "sass": "^1.77.3",
         "stylelint": "^16.5.0",
         "stylelint-config-clean-order": "^5.4.2",
         "stylelint-config-standard": "^36.0.0",
         "stylelint-config-standard-scss": "^13.1.0",
         "stylelint-order": "^6.0.4"
-    }
+    },
+    "browserslist": [
+        "last 5 versions"
+    ]
 }
