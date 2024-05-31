@@ -5,30 +5,14 @@ const plumber = require('gulp-plumber');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 
-// const htmlMinify = require('html-minifier');
-// function html() {
-//     const options = {
-//         removeComments: true,
-//         removeRedundantAttributes: true,
-//         removeScriptTypeAttributes: true,
-//         removeStyleLinkTypeAttributes: true,
-//         sortClassName: true,
-//         useShortDoctype: true,
-//         collapseWhitespace: true,
-//         minifyCSS: true,
-//         keepClosingSlash: true,
-//     };
-//     return src('src/**/*.html')
-//         .pipe(plumber())
-//         .on('data', function (file) {
-//             const buferFile = Buffer.from(htmlMinify.minify(file.contents.toString(), options));
-//             return (file.contents = buferFile);
-//         })
-//         .pipe(dest('dist/'))
-//         .pipe(browserSync.reload({ stream: true }));
-// }
-
 const gulpPug = require('gulp-pug');
+const scss = require('gulp-sass')(require('sass'));
+const uglify = require('gulp-uglify-es').default;
+const del = require('del');
+
+// const squoosh = require('gulp-libsquoosh');
+// const newer = require('gulp-newer');
+
 function pug() {
     return src('src/pages/**/*.pug')
         .pipe(gulpPug({ pretty: true }))
@@ -37,7 +21,6 @@ function pug() {
         .pipe(browserSync.reload({ stream: true }));
 }
 
-const scss = require('gulp-sass')(require('sass'));
 function scssToCss() {
     return src('src/**/*.scss')
         .pipe(plumber())
@@ -48,7 +31,6 @@ function scssToCss() {
         .pipe(browserSync.reload({ stream: true }));
 }
 
-const uglify = require('gulp-uglify-es').default;
 function scripts() {
     return src('src/**/*.js')
         .pipe(plumber())
@@ -58,7 +40,22 @@ function scripts() {
         .pipe(browserSync.reload({ stream: true }));
 }
 
-const del = require('del');
+// function images() {
+//     return src('./src/images/src/*.{png,jpg}')
+//         .pipe(
+//             squoosh({
+//                 encodeOptions: {
+//                     png: { optimize: true }, // Сжатие PNG
+//                     jpg: { optimize: true }, // Сжатие JPG
+//                     webp: { quality: 85 }, // Качество WebP
+//                     avif: { level: 6 }, // Уровень сжатия AVIF
+//                 },
+//                 output: '[ext]', // Сохранять расширение исходного файла
+//             })
+//         )
+//         .pipe(dest('./dist/images'));
+// }
+
 function clean() {
     return del('dist');
 }
@@ -70,7 +67,6 @@ function watchFiles() {
             index: 'bundle.html',
         },
     });
-    // watch(['src/**/*.html'], html);
     watch(['src/pages/**/*.pug'], pug);
     watch(['src/**/*.scss'], scssToCss);
     watch(['src/**/*.js'], scripts);
@@ -78,10 +74,11 @@ function watchFiles() {
 
 const build = series(clean, parallel(pug, scssToCss, scripts));
 
-// exports.html = html;
 exports.pug = pug;
 exports.scssToCss = scssToCss;
 exports.scripts = scripts;
+// exports.newer = newer;
+// exports.images = images;
 exports.watchFiles = watchFiles;
 exports.clean = clean;
 exports.build = build;

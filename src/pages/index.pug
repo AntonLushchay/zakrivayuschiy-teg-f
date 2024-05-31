@@ -1,32 +1,6 @@
-doctype html
-html(lang='ru')
-  head
-    meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title Закрывающий тег
-    //
-      <link rel="stylesheet" href="./fonts/fonts.css" />
-      <link rel="stylesheet" href="./styles/variables.css" />
-      <link rel="stylesheet" href="./styles/globals.css" />
-      <link rel="stylesheet" href="./styles/style.css" />
-      <link rel="stylesheet" href="./styles/animations.css" />
-      <link rel="stylesheet" href="./styles/themes.css" />
-    link(rel='stylesheet', href='/bundle.css')
-    script(src='./scripts/set-theme.js')
-  body.page
-    | TEEEEEEST
-    header.header
-      nav.theme-menu.header__theme-menu
-        // Не меняйте разметку этого списка, иначе скрипты перестанут работать
-        ul.theme-menu__list
-          li.theme-menu__item
-            button.theme-menu__button(type='button', data-theme='dark')
-              | Темно
-          li.theme-menu__item
-            button.theme-menu__button(type='button', data-theme='auto', disabled='')
-              | Авто
-          li.theme-menu__item
-            button.theme-menu__button(type='button', data-theme='light')
-              | Светло
-    main
-    script(src='./src/scripts/like.js')
+extends ../layouts/default
+
+block content
+  main
+    h1 testovoe soobshenie
+  script(src='./src/scripts/like.js')

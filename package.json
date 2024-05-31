@@ -8,6 +8,7 @@
         "lintFix": "stylelint ./**/*.{css,scss} --fix"
     },
     "devDependencies": {
+        "@prettier/plugin-pug": "^3.0.0",
         "browser-sync": "^3.0.2",
         "del": "^6.0.0",
         "gulp": "^5.0.0",
@@ -17,7 +18,7 @@
         "gulp-pug": "^5.0.0",
         "gulp-sass": "^5.1.0",
         "gulp-uglify-es": "^3.0.0",
-        "html-minifier": "^4.0.0",
+        "prettier": "^3.2.5",
         "sass": "^1.77.3",
         "stylelint": "^16.5.0",
         "stylelint-config-clean-order": "^5.4.2",
