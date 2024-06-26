@@ -1,12 +1,16 @@
 {
     "bracketSpacing": true,
+    "bracketSameLine": true,
     "semi": true,
     "tabWidth": 4,
     "printWidth": 100,
     "requireConfig": true,
     "singleQuote": true,
     "endOfLine": "lf",
-    "trailingComma": "es5",
+    "trailingComma": "all",
     "arrowParens": "always",
-    "json.quote": "double"
+    "singleAttributePerLine": true,
+    "jsxSingleQuote": true,
+    "useTabs": false,
+    "plugins": ["@prettier/plugin-pug", "prettier-plugin-css-order"]
 }

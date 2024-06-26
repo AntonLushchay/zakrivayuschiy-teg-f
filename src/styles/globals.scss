@@ -1,6 +1,8 @@
 /* В этом файле уже написаны некоторые базовые стили, которые сбрасывают или преобразуют дефольное браузерное поведение.
 Здесь же лежит утилитарный класс visually-hidden на случай, если нужно скрыть какой-то элемент, но оставить доступным для скринридера.
-Вы можете изменять этот файл или дополнять. Но скорее всего, вам это не потребуется. */
+Вы можете изменять этот файл или дополнять. Но скорее всего, вам это не потребуется.
+GLOBALS!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
 
 *,
 *::after,
@@ -10,6 +12,8 @@
 
 body {
     margin: 0;
+    font-family: Inter-Variable;
+    font-family: 'Press Start';
 }
 
 h1,
@@ -32,9 +36,9 @@ a {
 
 button,
 input {
-    font-family: inherit;
-    font-size: inherit;
     color: currentcolor;
+    font-size: inherit;
+    font-family: inherit;
 }
 
 ul,
@@ -44,14 +48,10 @@ ol {
 
 .visually-hidden {
     position: absolute;
-
-    overflow: hidden;
-
     inline-size: 1px;
     block-size: 1px;
-
+    overflow: hidden;
     white-space: nowrap;
-
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
 }

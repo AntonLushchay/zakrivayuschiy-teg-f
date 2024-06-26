@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "lint": "stylelint ./**/*.{css,scss}",
-        "lintFix": "stylelint ./**/*.{css,scss} --fix"
+        "lintFix": "stylelint ./**/*.{css,scss} --fix",
+        "check": "prettier --check './src/**/*.{html,css,js}'"
     },
     "devDependencies": {
         "@prettier/plugin-pug": "^3.0.0",
@@ -18,10 +19,11 @@
         "gulp-pug": "^5.0.0",
         "gulp-sass": "^5.1.0",
         "gulp-uglify-es": "^3.0.0",
-        "prettier": "^3.2.5",
+        "postcss": "^8.4.38",
+        "prettier": "^3.3.0",
+        "prettier-plugin-css-order": "^2.1.2",
         "sass": "^1.77.3",
         "stylelint": "^16.5.0",
-        "stylelint-config-clean-order": "^5.4.2",
         "stylelint-config-standard": "^36.0.0",
         "stylelint-config-standard-scss": "^13.1.0",
         "stylelint-order": "^6.0.4"

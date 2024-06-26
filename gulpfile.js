@@ -10,9 +10,6 @@ const scss = require('gulp-sass')(require('sass'));
 const uglify = require('gulp-uglify-es').default;
 const del = require('del');
 
-// const squoosh = require('gulp-libsquoosh');
-// const newer = require('gulp-newer');
-
 function pug() {
     return src('src/pages/**/*.pug')
         .pipe(gulpPug({ pretty: true }))
@@ -22,10 +19,16 @@ function pug() {
 }
 
 function scssToCss() {
-    return src('src/**/*.scss')
+    return src([
+        'src/styles/variables.scss',
+        'src/styles/globals.scss',
+        'src/styles/themes.scss',
+        'src/styles/style.scss',
+        'src/styles/animations.scss',
+    ])
         .pipe(plumber())
         .pipe(concat('bundle.css'))
-        .pipe(scss({ outputStyle: 'compressed' }))
+        .pipe(scss({ outputStyle: 'expanded' }))
         .pipe(autoprefixer())
         .pipe(dest('dist/'))
         .pipe(browserSync.reload({ stream: true }));
@@ -34,27 +37,23 @@ function scssToCss() {
 function scripts() {
     return src('src/**/*.js')
         .pipe(plumber())
-        .pipe(concat('bundle.js'))
-        .pipe(uglify())
         .pipe(dest('dist/'))
         .pipe(browserSync.reload({ stream: true }));
 }
 
-// function images() {
-//     return src('./src/images/src/*.{png,jpg}')
-//         .pipe(
-//             squoosh({
-//                 encodeOptions: {
-//                     png: { optimize: true }, // Сжатие PNG
-//                     jpg: { optimize: true }, // Сжатие JPG
-//                     webp: { quality: 85 }, // Качество WebP
-//                     avif: { level: 6 }, // Уровень сжатия AVIF
-//                 },
-//                 output: '[ext]', // Сохранять расширение исходного файла
-//             })
-//         )
-//         .pipe(dest('./dist/images'));
-// }
+function images() {
+    return src('src/images/**/*.*')
+        .pipe(plumber())
+        .pipe(dest('dist/images'))
+        .pipe(browserSync.reload({ stream: true }));
+}
+
+function fonts() {
+    return src('src/fonts/**/*.{css,woff,ttf}', { encoding: false })
+        .pipe(plumber())
+        .pipe(dest('dist/fonts'))
+        .pipe(browserSync.reload({ stream: true }));
+}
 
 function clean() {
     return del('dist');
@@ -67,18 +66,20 @@ function watchFiles() {
             index: 'bundle.html',
         },
     });
-    watch(['src/pages/**/*.pug'], pug);
+    watch(['src/**/*.pug'], pug);
     watch(['src/**/*.scss'], scssToCss);
+    watch(['src/fonts/**/*.*'], fonts);
+    watch(['src/images/src/'], images);
     watch(['src/**/*.js'], scripts);
 }
 
-const build = series(clean, parallel(pug, scssToCss, scripts));
+const build = series(clean, parallel(pug, scssToCss, fonts, images, scripts));
 
 exports.pug = pug;
 exports.scssToCss = scssToCss;
+exports.fonts = fonts;
 exports.scripts = scripts;
-// exports.newer = newer;
-// exports.images = images;
+exports.images = images;
 exports.watchFiles = watchFiles;
 exports.clean = clean;
 exports.build = build;
