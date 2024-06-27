@@ -8,16 +8,8 @@
 @font-face {
     font-weight: 400 900;
     src:
-        local('Inter-Variable'),
-        url('./Inter-Variable.woff2') format('woff2 supports variations'),
-        url('./Inter-Variable.woff2') format('woff2-variations');
-    font-family: Inter-Variable;
+        url(./Inter-Variable.woff2) format('woff2 supports variations'),
+        url(./Inter-Variable.woff2) format('woff2-variations');
+    font-family: 'Inter Variable';
     font-display: swap;
 }
-
-/* @font-face {
-    font-weight: 400;
-    src: url(PlaywriteMX-VariableFont_wght.ttf) format('ttf');
-    font-family: 'PlaywriteMX-VariableFont_wght';
-    font-display: swap;
-} */

@@ -49,7 +49,7 @@ function images() {
 }
 
 function fonts() {
-    return src('src/fonts/**/*.{css,woff,ttf}', { encoding: false })
+    return src('src/fonts/**/*.*', { encoding: false })
         .pipe(plumber())
         .pipe(dest('dist/fonts'))
         .pipe(browserSync.reload({ stream: true }));
