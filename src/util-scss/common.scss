@@ -15,10 +15,10 @@ STYLES!!!!!!!!!!!!!!!!!!!!!!!
 */
 
 .page {
-    background-color: lightblue;
+    background-color: $backgd-color;
     min-inline-size: 320px;
     min-block-size: 100dvb;
-    font-family: var(--main-font), sans-serif;
+    font-family: $main-font;
     font-variation-settings: 'wght' 400;
 }
 

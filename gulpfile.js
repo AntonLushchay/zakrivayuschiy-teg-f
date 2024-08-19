@@ -11,7 +11,7 @@ const uglify = require('gulp-uglify-es').default;
 const del = require('del');
 
 function pug() {
-    return src('src/pages/**/*.pug')
+    return src('src/index.pug')
         .pipe(gulpPug({ pretty: true }))
         .pipe(concat('bundle.html'))
         .pipe(dest('dist/'))
@@ -19,13 +19,7 @@ function pug() {
 }
 
 function scssToCss() {
-    return src([
-        'src/styles/variables.scss',
-        'src/styles/globals.scss',
-        'src/styles/themes.scss',
-        'src/styles/style.scss',
-        'src/styles/animations.scss',
-    ])
+    return src(['src/index.scss'])
         .pipe(plumber())
         .pipe(concat('bundle.css'))
         .pipe(scss({ outputStyle: 'expanded' }))

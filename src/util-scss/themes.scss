@@ -3,7 +3,18 @@
 ✦ theme-dark — класс тёмной темы
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
-THEMES!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-.test-themes {
-    padding: 0;
+THEMES!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+:root.theme-light {
+    --backgd-color: #fff;
+    --accent-color: #000;
+    --title-font-weight: 700;
+    --text-font-weight: 400;
+}
+
+:root.theme-dark {
+    --backgd-color: #000;
+    --accent-color: #00cc14;
+    --title-font-weight: 785;
+    --text-font-weight: 465;
 }
