@@ -1,9 +1,4 @@
-/* В этом файле вы опишете значения переменных в разных цветовых схемах.
-Придерживайтесь такого именования классов:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
-THEMES!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* THEMES!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 :root.theme-light {
     --backgd-color: #fff;
@@ -17,4 +12,13 @@ THEMES!!!!!!!!!!!!!!!!!!!!!!!!! */
     --accent-color: #00cc14;
     --title-font-weight: 785;
     --text-font-weight: 465;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --backgd-color: #000;
+        --accent-color: #00cc14;
+        --title-font-weight: 785;
+        --text-font-weight: 465;
+    }
 }
