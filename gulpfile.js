@@ -20,7 +20,6 @@ function pug() {
 
 function scssToCss() {
     return src(['src/index.scss'])
-        .pipe(plumber())
         .pipe(concat('bundle.css'))
         .pipe(scss({ outputStyle: 'expanded' }))
         .pipe(autoprefixer())
@@ -63,7 +62,7 @@ function watchFiles() {
     watch(['src/**/*.pug'], pug);
     watch(['src/**/*.scss'], scssToCss);
     watch(['src/fonts/**/*.*'], fonts);
-    watch(['src/images/src/'], images);
+    watch(['src/images/svg/'], images);
     watch(['src/**/*.js'], scripts);
 }
 
