@@ -12,9 +12,13 @@ STYLES!!!!!!!!!!!!!!!!!!!!!!!
 */
 
 .page {
-    background-color: var(--backgd-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: var(--backgd-img);
+    background-attachment: fixed;
     min-inline-size: 320px;
-    min-block-size: 100dvb;
+    min-block-size: 100vh;
     color: var(--accent-color);
     font-weight: var(--text-font-weight);
     font-family: var(--main-font);
