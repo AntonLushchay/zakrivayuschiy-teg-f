@@ -1,13 +1,12 @@
-/* Var */
+/* VARS */
 :root {
     --main-font: 'Inter Variable', sans-serif;
     --accent-font: 'Press Start';
     --title-font-weight: 700;
     --text-font-weight: 400;
-    --backgd-img: repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
+    --backgd-img-grad: repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
         repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
-        linear-gradient(#e7e7e7, #1a1a1a);
+        linear-gradient(#e7e7e7 0.01%, #1a1a1a);
     --backgd-color: #fff;
     --accent-color: #000;
-    --backgd-gradient: linear-gradient(tra);
 }

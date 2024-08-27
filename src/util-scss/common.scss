@@ -8,24 +8,23 @@
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
-STYLES!!!!!!!!!!!!!!!!!!!!!!!
+ COMMON STYLES
 */
 
 .page {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    background-image: var(--backgd-img);
+    align-items: center;
+    background-image: var(--backgd-img-grad);
+    background-size: cover;
     background-attachment: fixed;
+    padding-top: 100px;
     min-inline-size: 320px;
     min-block-size: 100vh;
     color: var(--accent-color);
     font-weight: var(--text-font-weight);
+    font-size: 18px;
     font-family: var(--main-font);
-}
-
-body {
-    display: flex;
 }
 
 .inner {
