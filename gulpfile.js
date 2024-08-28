@@ -13,7 +13,7 @@ const del = require('del');
 function pug() {
     return src('src/index.pug')
         .pipe(gulpPug({ pretty: true }))
-        .pipe(concat('bundle.html'))
+        .pipe(concat('index.html'))
         .pipe(dest('dist/'))
         .pipe(browserSync.reload({ stream: true }));
 }
