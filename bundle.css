@@ -1,0 +1,227 @@
+@charset "UTF-8";
+/* FONTS */
+@font-face {
+  font-weight: 400;
+  src: url(./fonts/PressStart2P-Regular.woff) format("woff");
+  font-family: "Press Start";
+  font-display: swap;
+}
+@font-face {
+  font-weight: 400 900;
+  src: url(./fonts/Inter-Variable.woff2) format("woff2 supports variations"), url(./fonts/Inter-Variable.woff2) format("woff2-variations");
+  font-family: "Inter Variable";
+  font-display: swap;
+}
+/* GLOBALS */
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input {
+  margin: 0;
+  padding: 0;
+  color: currentcolor;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* VARS */
+:root {
+  --main-font: "Inter Variable", sans-serif;
+  --accent-font: "Press Start";
+  --title-font-weight: 700;
+  --text-font-weight: 400;
+  --backgd-img-grad: repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
+      repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
+      linear-gradient(#e7e7e7 0.01%, #1a1a1a);
+  --backgd-color: #fff;
+  --accent-color: #000;
+}
+
+/* THEMES */
+:root.theme-light {
+  --backgd-img-grad: repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
+      repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
+      linear-gradient(#e7e7e7 0.01%, #1a1a1a);
+  --accent-color: #000;
+  --title-font-weight: 700;
+  --text-font-weight: 400;
+  --backgd-color: #fff;
+}
+
+:root.theme-dark {
+  --backgd-img-grad: repeating-linear-gradient(#000 0 2px, transparent 2px 4px),
+      repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 4px),
+      linear-gradient(#007f0c, #004306);
+  --accent-color: #00cc14;
+  --title-font-weight: 785;
+  --text-font-weight: 465;
+  --backgd-color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --backgd-img-grad: repeating-linear-gradient(#000 0 2px, transparent 2px 4px),
+        repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 4px),
+        linear-gradient(#007f0c, #004306);
+    --accent-color: #00cc14;
+    --title-font-weight: 785;
+    --text-font-weight: 465;
+    --backgd-color: #000;
+  }
+}
+/* Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+✦ theme-dark — класс тёмной темы
+✦ theme-light — класс светлой темы
+✦ like-icon — для svg-иконки анимированного сердца
+✦ card__like-button — для кнопки Like рядом с иконкой
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
+✦ button__text — для обозначения текстового элемента внутри кнопки
+
+ COMMON STYLES
+*/
+.page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: var(--backgd-img-grad);
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 100px;
+  min-inline-size: 320px;
+  min-block-size: 100vh;
+  color: var(--accent-color);
+  font-weight: var(--text-font-weight);
+  font-size: 18px;
+  font-family: var(--main-font);
+}
+
+.inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+}
+
+/* HEADER */
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  border: 2px solid var(--accent-color);
+  background: var(--backgd-color);
+  width: 100%;
+  height: 323px;
+  font-size: 14px;
+  font-family: var(--accent-font);
+}
+.header__title {
+  font-size: 49px;
+}
+
+.theme-menu {
+  padding-top: 5px;
+}
+.theme-menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 14px;
+}
+.theme-menu__item {
+  position: relative;
+}
+.theme-menu__button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  text-transform: uppercase;
+}
+.theme-menu__button:disabled {
+  opacity: 0.5;
+}
+.theme-menu__button:disabled::before {
+  position: absolute;
+  left: -25px;
+  content: "▶";
+}
+
+@media (width >= 376px) {
+  .header {
+    max-width: 700px;
+    height: 364px;
+    font-size: clamp(0.875rem, 0.676rem + 0.846vi, 1.438rem);
+  }
+  .header__title {
+    font-size: clamp(3.063rem, 2.709rem + 1.504vi, 4.063rem);
+  }
+}
