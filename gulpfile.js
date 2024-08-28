@@ -58,6 +58,7 @@ function watchFiles() {
             baseDir: 'dist/',
             index: 'bundle.html',
         },
+        open: false,
     });
     watch(['src/**/*.pug'], pug);
     watch(['src/**/*.scss'], scssToCss);
