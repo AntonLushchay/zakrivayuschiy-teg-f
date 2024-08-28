@@ -55,9 +55,8 @@ function watchFiles() {
     browserSync.init({
         server: {
             baseDir: 'dist/',
-            index: 'bundle.html',
+            index: 'index.html',
         },
-        open: false,
     });
     watch(['src/**/*.pug'], pug);
     watch(['src/**/*.scss'], scssToCss);
