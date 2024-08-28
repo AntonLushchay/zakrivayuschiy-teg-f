@@ -10,19 +10,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x, 22.x]
-
     steps:
     - uses: actions/checkout@v4
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
+    - uses: actions/setup-node@v4
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 20
 
     - name: Build
       run: |
-        npm install
+        npm ci
         gulp build
+
+    - name: deploy
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: dist
+        brunch: gh-pages
