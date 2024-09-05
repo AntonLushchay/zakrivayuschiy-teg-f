@@ -12,7 +12,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [18.x, 20.x]
+                node-version: [20.x]
 
         steps:
             - uses: actions/checkout@v4
@@ -22,13 +22,13 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
 
-            - name: Build
+            - name: Build and deploy
               run: |
                   npm install
                   gulp build
-
-            - name: deploy
-              uses: JamesIves/github-pages-deploy-action@v4
-              with:
-                  branch: gh-pages
-                  folder: dist
+                  npm run deploy
+            # - name: deploy
+            #   uses: JamesIves/github-pages-deploy-action@v4
+            #   with:
+            #       branch: gh-pages
+            #       folder: dist
