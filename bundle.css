@@ -33,22 +33,19 @@ h6,
 p,
 ul,
 ol,
-li {
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  color: inherit;
-}
-
+li,
 button,
-input {
+input,
+figure {
   margin: 0;
   padding: 0;
   color: currentcolor;
   font-size: inherit;
   font-family: inherit;
+}
+
+a {
+  color: inherit;
 }
 
 ul,
@@ -226,3 +223,65 @@ ol {
   }
 }
 /* CARD */
+.card {
+  margin-top: 100px;
+  border: var(--accent-color) 2px solid;
+  background-color: var(--backgd-color);
+  width: 100%;
+  max-width: 700px;
+}
+.card__title {
+  border-bottom: var(--accent-color) 2px solid;
+  padding: 5px 10px;
+  font-weight: bold;
+}
+.card__image-wrapper {
+  position: relative;
+  border-bottom: var(--accent-color) 2px solid;
+}
+.card__image-wrapper::before {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  content: "</HTML>";
+  color: #000;
+  font-size: 14px;
+  font-family: var(--accent-font);
+  text-shadow: 1px 1px 0 #777, -1px -1px 0 #777, 1px -1px 0 #777, -1px 1px 0 #777;
+}
+.card__image {
+  display: block;
+}
+.card__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 27px;
+  padding: 25px;
+}
+.card__like-itemes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+}
+.card__like-itemes__button {
+  border: var(--accent-color) 2px solid;
+  background: transparent;
+  width: 130px;
+  height: 38px;
+  font-size: 14px;
+  font-family: var(--accent-font);
+}
