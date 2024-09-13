@@ -19,22 +19,19 @@ h6,
 p,
 ul,
 ol,
-li {
-    margin: 0;
-    padding: 0;
-}
-
-a {
-    color: inherit;
-}
-
+li,
 button,
-input {
+input,
+figure {
     margin: 0;
     padding: 0;
     color: currentcolor;
     font-size: inherit;
     font-family: inherit;
+}
+
+a {
+    color: inherit;
 }
 
 ul,

@@ -1,1 +1,64 @@
 /* CARD */
+
+.card {
+    margin-top: 100px;
+    border: var(--accent-color) 2px solid;
+    background-color: var(--backgd-color);
+    width: 100%;
+    max-width: 700px;
+
+    &__title {
+        border-bottom: var(--accent-color) 2px solid;
+        padding: 5px 10px;
+        font-weight: bold;
+    }
+
+    &__image-wrapper {
+        position: relative;
+        border-bottom: var(--accent-color) 2px solid;
+
+        &::before {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            content: '</HTML>';
+            color: #000;
+            font-size: 14px;
+            font-family: var(--accent-font);
+            text-shadow:
+                1px 1px 0 #777,
+                -1px -1px 0 #777,
+                1px -1px 0 #777,
+                -1px 1px 0 #777;
+        }
+    }
+
+    &__image {
+        display: block;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 27px;
+        padding: 25px;
+    }
+
+    &__like-itemes {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 12px;
+        padding-right: 25px;
+        padding-bottom: 25px;
+
+        &__button {
+            border: var(--accent-color) 2px solid;
+            background: transparent;
+            width: 130px;
+            height: 38px;
+            font-size: 14px;
+            font-family: var(--accent-font);
+        }
+    }
+}
