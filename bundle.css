@@ -40,6 +40,7 @@ figure {
   margin: 0;
   padding: 0;
   color: currentcolor;
+  font-weight: inherit;
   font-size: inherit;
   font-family: inherit;
 }
@@ -233,7 +234,7 @@ ol {
 .card__title {
   border-bottom: var(--accent-color) 2px solid;
   padding: 5px 10px;
-  font-weight: bold;
+  font-weight: var(--title-font-weight);
 }
 .card__image-wrapper {
   position: relative;
