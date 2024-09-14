@@ -10,7 +10,7 @@
     &__title {
         border-bottom: var(--accent-color) 2px solid;
         padding: 5px 10px;
-        font-weight: bold;
+        font-weight: var(--title-font-weight);
     }
 
     &__image-wrapper {

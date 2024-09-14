@@ -1,7 +1,4 @@
-extends ./layouts/default
-include ./components/content-card/content-card
-
-block content
+mixin cardData
     -
         var cards = [
             {
@@ -45,7 +42,3 @@ block content
                 text2: 'Текст 8.2',
             },
         ];
-    main
-        each item in cards
-            +contentCard(item.title, item.text1, item.text2)
-    script(src='./scripts/like.js')
