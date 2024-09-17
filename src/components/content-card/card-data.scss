@@ -1,0 +1,20 @@
+$img-filter: (
+    filter-0 opacity(100),
+    filter-1 sepia(70%),
+    filter-2 (saturate(250%) brightness(80%)),
+    filter-3 (hue-rotate(20deg) grayscale(40%) brightness(80%)),
+    filter-4 (invert(70%) brightness(80%)),
+    filter-5 grayscale(90%),
+    filter-6 blur(20px),
+    filter-7 (hue-rotate(80deg) brightness(50%) invert(20%))
+);
+$before-element: (
+    1 '</HTML>',
+    2 '</HTML>',
+    3 '<CSS>',
+    4 '<desigions>',
+    5 'care',
+    6 '<support>',
+    7 '<lifes-style: none;>',
+    8 '<experience>'
+);

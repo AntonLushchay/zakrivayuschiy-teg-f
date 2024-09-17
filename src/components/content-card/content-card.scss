@@ -1,7 +1,9 @@
 /* CARD */
 
+@import './card-data';
+
 .card {
-    margin-top: 100px;
+    margin-top: 50.5px;
     border: var(--accent-color) 2px solid;
     background-color: var(--backgd-color);
     width: 100%;
@@ -9,7 +11,7 @@
 
     &__title {
         border-bottom: var(--accent-color) 2px solid;
-        padding: 5px 10px;
+        padding: 4.5px 10px;
         font-weight: var(--title-font-weight);
     }
 
@@ -19,17 +21,23 @@
 
         &::before {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            content: '</HTML>';
-            color: #000;
+            top: 23px;
+            right: 10px;
+            z-index: 1;
+            color: (var(--accent-color));
             font-size: 14px;
             font-family: var(--accent-font);
             text-shadow:
-                1px 1px 0 #777,
-                -1px -1px 0 #777,
-                1px -1px 0 #777,
-                -1px 1px 0 #777;
+                1px 1px 0 #565353,
+                1px -1px 0 #565353,
+                -1px 1px 0 #565353,
+                -1px -1px 0 #565353;
+        }
+    }
+
+    @each $cardNum, $teg in $before-element {
+        &:nth-child(#{$cardNum}) &__image-wrapper::before {
+            content: '#{$teg}';
         }
     }
 
@@ -42,6 +50,7 @@
         flex-direction: column;
         gap: 27px;
         padding: 25px;
+        line-height: 20.9px;
     }
 
     &__like-itemes {
@@ -59,6 +68,22 @@
             height: 38px;
             font-size: 14px;
             font-family: var(--accent-font);
+        }
+    }
+}
+
+@each $filter, $blur in $img-filter {
+    .img-#{$filter} {
+        filter: $blur;
+    }
+}
+
+@media (width >= 376px) {
+    .card {
+        &__image-wrapper {
+            &::before {
+                right: 21px;
+            }
         }
     }
 }

@@ -1,0 +1,35 @@
+/* FOOTER */
+
+.footer {
+    &__button {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-top: 53px;
+        margin-bottom: 100px;
+        border: 2px solid var(--accent-color);
+        background-color: var(--backgd-color);
+        width: 306px;
+        height: 84px;
+        color: var(--accent-color);
+        font-size: 14px;
+        font-family: var(--accent-font);
+    }
+}
+
+@media (width >= 376px) {
+    .footer {
+        &__button {
+            flex-direction: row-reverse;
+            width: 335px;
+            height: 55px;
+        }
+
+        svg {
+            width: 22px;
+            height: 22px;
+        }
+    }
+}

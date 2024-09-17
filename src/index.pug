@@ -2,50 +2,8 @@ extends ./layouts/default
 include ./components/content-card/content-card
 
 block content
-    -
-        var cards = [
-            {
-                title: 'Фритрек и нулевой спринт: Подготовка к работе',
-                text1: 'Это было самое начало пути. На этом этапе важно было проникнуться основами и настроиться на учёбу. И, возможно, подумать, как новые знания могут повлиять на ваше будущее.',
-                text2: 'Место для ваших воспоминаний о начале обучения.',
-            },
-            {
-                title: 'Заголовок 2',
-                text1: 'Текст 2.1',
-                text2: 'Текст 2.2',
-            },
-            {
-                title: 'Заголовок 3',
-                text1: 'Текст 3.1',
-                text2: 'Текст 3.2',
-            },
-            {
-                title: 'Заголовок 4',
-                text1: 'Текст 4.1',
-                text2: 'Текст 4.2',
-            },
-            {
-                title: 'Заголовок 5',
-                text1: 'Текст 5.1',
-                text2: 'Текст 5.2',
-            },
-            {
-                title: 'Заголовок 6',
-                text1: 'Текст 6.1',
-                text2: 'Текст 6.2',
-            },
-            {
-                title: 'Заголовок 7',
-                text1: 'Текст 7.1',
-                text2: 'Текст 7.2',
-            },
-            {
-                title: 'Заголовок 8',
-                text1: 'Текст 8.1',
-                text2: 'Текст 8.2',
-            },
-        ];
+    include ./components/content-card/card-data
     main
         each item in cards
-            +contentCard(item.title, item.text1, item.text2)
+            +contentCard(item.title, item.text1, item.text2, item.filterClass)
     script(src='./scripts/like.js')

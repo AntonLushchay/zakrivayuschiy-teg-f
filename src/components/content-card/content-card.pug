@@ -1,8 +1,11 @@
-mixin contentCard(title, text1, text2)
+mixin contentCard(title, text1, text2, filterClass)
     article.card
         h2.card__title= title
         .card__image-wrapper
-            svg.card__image(viewBox='0 0 700 700', fill='none', xmlns='http://www.w3.org/2000/svg')
+            svg.card__image(class=filterClass)(
+                viewBox='0 0 700 700',
+                fill='none',
+                xmlns='http://www.w3.org/2000/svg')
                 use.bus(href='./images/bus2.svg#bus')
         .card__text
             p= text1
@@ -14,4 +17,4 @@ mixin contentCard(title, text1, text2)
                 viewBox='0 0 27 24',
                 xmlns='http://www.w3.org/2000/svg')
                 use(href='./images/heart.svg#heart')
-            button.card__like-itemes__button(type='') Like
+            button.card__like-itemes__button(type='button') Like
