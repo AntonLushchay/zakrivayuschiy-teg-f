@@ -1,5 +1,7 @@
 /* HEADER */
 
+@import './animations.scss';
+
 .header {
     display: flex;
     flex-direction: column;
@@ -38,17 +40,53 @@
     }
 
     &__button {
+        position: relative;
+        opacity: 1;
+        transition: opacity 0.3s;
         cursor: pointer;
+        outline: none;
         border: none;
         background: transparent;
         text-transform: uppercase;
 
+        &::after {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            opacity: 1;
+            transition:
+                width 0.3s,
+                opacity 0.3s;
+            background-color: var(--accent-color);
+            width: 0;
+            height: 2px;
+            content: '';
+        }
+
+        &:focus-visible {
+            opacity: 0.6;
+
+            &::after {
+                width: 100%;
+            }
+        }
+
+        &:hover {
+            opacity: 0.6;
+        }
+
+        &:focus {
+            opacity: 0.6;
+        }
+
         &:disabled {
-            opacity: 0.5;
+            opacity: 0.6;
+            pointer-events: none;
 
             &::before {
                 position: absolute;
                 left: -20px;
+                animation: move-arrow 0.5s ease-in-out infinite alternate;
                 content: '▶';
             }
         }

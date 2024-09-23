@@ -11,10 +11,12 @@ mixin contentCard(title, text1, text2, filterClass)
             p= text1
             p= text2
         .card__like-itemes
-            svg.card__like-items__heart(
-                width='27',
-                height='24',
-                viewBox='0 0 27 24',
-                xmlns='http://www.w3.org/2000/svg')
-                use(href='./images/heart.svg#heart')
-            button.card__like-itemes__button(type='button') Like
+            button.card__like-itemes__heart_wrapper.card__icon-button
+                svg.like-icon(
+                    width='27',
+                    height='24',
+                    viewBox='0 0 27 24',
+                    xmlns='http://www.w3.org/2000/svg')
+                    use(href='./images/heart.svg#heart')
+            button.card__like-itemes__like-button.card__like-button(type='button')
+                span.button__text Like
