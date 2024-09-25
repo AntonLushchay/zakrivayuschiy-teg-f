@@ -9,6 +9,15 @@
         repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
         linear-gradient(#e7e7e7 0.01%, #1a1a1a);
     --backgd-color: #fff;
-    --accent-color: #000;
+    --accent-color: rgba(0, 0, 0, 1);
     --text-stroke-color: rgba(255 255 255 / 50%);
+    --mix-blend-mode-color: #fff;
+    --svg-contour-color: rgba(0, 0, 0, 1);
+    --svg-main-body-color: rgba(0, 0, 0, 0);
+    --svg-core-color: rgba(0, 0, 0, 0);
+    --svg-sparks-color: rgba(255, 0, 0, 0);
+    --svg-red-color: rgba(255, 0, 0, 1);
+    --svg-transition-main-body: fill 0.3s;
+    --svg-transition-core: fill 0.3s 0.03s;
+    --svg-transition-contour: fill 0.3s 0.06s;
 }
