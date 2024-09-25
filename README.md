@@ -1,3 +1,5 @@
+https://github.com/AntonLushchay/zakrivayuschiy-teg-f
+
 Проект доступен на github pages по ссылке https://antonlushchay.github.io/zakrivayuschiy-teg-f/
 
 Что бы проект собрать локально необходимо: 0. Скачать npm и Node
