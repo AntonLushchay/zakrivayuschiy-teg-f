@@ -8,7 +8,8 @@
         "lint": "stylelint ./**/*.{css,scss}",
         "lintFix": "stylelint ./**/*.{css,scss} --fix",
         "check": "prettier --check './src/**/*.{html,css,js}'",
-        "deploy": "gh-pages -d dist"
+        "deploy": "gh-pages -d dist",
+        "dev": "gulp"
     },
     "devDependencies": {
         "@prettier/plugin-pug": "^3.0.0",
