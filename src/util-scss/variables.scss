@@ -1,8 +1,8 @@
 /* VARS */
 
 :root {
-    --main-font: 'Inter Variable', sans-serif;
-    --accent-font: 'Press Start';
+    --main-font: 'Inter Variable', 'Arial', sans-serif;
+    --accent-font: 'Press Start', 'Courier New', courier, fantasy;
     --title-font-weight: 700;
     --text-font-weight: 400;
     --backgd-img-grad: repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
@@ -12,12 +12,9 @@
     --accent-color: rgba(0, 0, 0, 1);
     --text-stroke-color: rgba(255 255 255 / 50%);
     --mix-blend-mode-color: #fff;
-    --svg-contour-color: rgba(0, 0, 0, 1);
-    --svg-main-body-color: rgba(0, 0, 0, 0);
-    --svg-core-color: rgba(0, 0, 0, 0);
-    --svg-sparks-color: rgba(255, 0, 0, 0);
+    --svg-default-contour-color: rgba(0, 0, 0, 1);
+    --svg-default-main-body-color: rgba(0, 0, 0, 0);
+    --svg-default-core-color: rgba(0, 0, 0, 0);
+    --svg-default-sparks-color: rgba(255, 0, 0, 0);
     --svg-red-color: rgba(255, 0, 0, 1);
-    --svg-transition-main-body: fill 0.3s;
-    --svg-transition-core: fill 0.3s 0.03s;
-    --svg-transition-contour: fill 0.3s 0.06s;
 }

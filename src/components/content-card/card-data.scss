@@ -1,12 +1,12 @@
 $img-filter: (
-    filter-0 opacity(100),
-    filter-1 sepia(70%),
-    filter-2 (saturate(250%) brightness(80%)),
-    filter-3 (hue-rotate(20deg) grayscale(40%) brightness(80%)),
-    filter-4 (invert(70%) brightness(80%)),
-    filter-5 grayscale(90%),
-    filter-6 blur(20px),
-    filter-7 (hue-rotate(80deg) brightness(50%) invert(20%))
+    opacity100 opacity(100),
+    sepia70 sepia(70%),
+    saturate250-brightness80 (saturate(250%) brightness(80%)),
+    hue-rotate20-grayscale40-brightness80 (hue-rotate(20deg) grayscale(40%) brightness(80%)),
+    invert70-brightness80 (invert(70%) brightness(80%)),
+    grayscale90 grayscale(90%),
+    blur20 blur(20px),
+    hue-rotate80-brightness50-invert20 (hue-rotate(80deg) brightness(50%) invert(20%))
 );
 $before-element: (
     1 '</HTML>',

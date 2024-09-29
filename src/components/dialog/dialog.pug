@@ -1,0 +1,8 @@
+dialog#dialog-id.dialog
+    .dialog-wrapper
+        svg(width='40', height='40', viewBox='0 0 40 40', xmlns='http://www.w3.org/2000/svg')
+            use(href='./images/floppy.svg#floppy')
+        h2 Вставьте дискету, чтобы продолжить
+        form.button-wrapper
+            button(type='button', onclick='window[\'dialog-id\'].close()') 
+                span OK

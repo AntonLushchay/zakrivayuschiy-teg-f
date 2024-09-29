@@ -6,4 +6,5 @@ block content
     main
         each item in cards
             +contentCard(item.title, item.text1, item.text2, item.filterClass)
+        include ./components/bottom-button/bottom-button
     script(src='./scripts/like.js')

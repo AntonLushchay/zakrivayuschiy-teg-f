@@ -6,10 +6,10 @@ html(lang='ru')
         meta(name='color-sheme', content='dark light')
         title Закрывающий тег
         link(rel='icon', href='./images/favicon.svg', type='image/svg+xml')
+        link(rel='apple-touch-icon', href='./images/favicon.png')
         link(rel='stylesheet', href='./bundle.css')
         script(src='./scripts/set-theme.js')
     body.page
         include ../components/header/header
         block content
-        include ../components/footer/footer
-        include ../components/popup/popover
+        include ../components/dialog/dialog

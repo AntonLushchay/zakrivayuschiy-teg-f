@@ -22,9 +22,9 @@
     min-inline-size: 320px;
     min-block-size: 100vh;
     color: var(--accent-color);
-    font-weight: var(--text-font-weight);
     font-size: 18px;
     font-family: var(--main-font);
+    font-variation-settings: 'wght' var(--title-font-weight);
 }
 
 .inner {

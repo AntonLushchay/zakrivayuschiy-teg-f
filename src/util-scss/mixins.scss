@@ -1,0 +1,164 @@
+@mixin header-animation {
+    &::after {
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        opacity: 1;
+        transition:
+            width 0.3s,
+            opacity 0.3s;
+        background-color: var(--accent-color);
+        width: 0;
+        height: 2px;
+        content: '';
+    }
+
+    &:focus-visible {
+        opacity: 0.6;
+
+        &::after {
+            width: 100%;
+        }
+    }
+
+    &:hover {
+        opacity: 0.6;
+    }
+
+    &:focus {
+        opacity: 0.6;
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        pointer-events: none;
+
+        &::before {
+            position: absolute;
+            left: -20px;
+            animation: move-arrow 0.5s ease-in-out infinite alternate;
+            content: '▶';
+        }
+    }
+}
+
+@mixin heart-animation {
+    .like-icon {
+        .contour {
+            transition: fill 0.3s linear;
+            fill: var(--svg-default-contour-color);
+        }
+
+        .core {
+            transition: fill 0.3s linear 0.03s;
+            fill: var(--svg-default-core-color);
+        }
+
+        .main-body {
+            transition: fill 0.3s linear;
+            fill: var(--svg-default-main-body-color);
+        }
+
+        .sparks {
+            fill: var(--svg-default-sparks-color);
+        }
+
+        &:hover {
+            .core {
+                transition: fill 0.3s linear;
+                fill: var(--accent-color);
+            }
+
+            .main-body {
+                transition: fill 0.3s linear 0.05s;
+                fill: var(--accent-color);
+            }
+        }
+
+        &:active {
+            .core {
+                transition: fill 0.3s linear;
+                fill: var(--svg-red-color);
+            }
+
+            .main-body {
+                transition: fill 0.3s linear 0.05s;
+                fill: var(--svg-red-color);
+            }
+        }
+    }
+
+    .like-icon.is-liked {
+        .only-heart {
+            transform-origin: center;
+            animation: scale-heart 0.3s ease-in 0.1s alternate;
+
+            .contour {
+                transition: fill 0.3s linear 0.06s;
+                fill: var(--svg-red-color);
+            }
+
+            .core {
+                transition: fill 0.3s linear;
+                fill: var(--svg-red-color);
+            }
+
+            .main-body {
+                transition: fill 0.3s linear 0.05s;
+                fill: var(--svg-red-color);
+            }
+        }
+
+        .sparks {
+            animation: spark-opacity 0.3s ease-in 0.3s alternate;
+        }
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--accent-color);
+        outline-offset: -1px;
+    }
+}
+
+@mixin button-animation {
+    position: relative;
+    transition: box-shadow 0.3s;
+    cursor: pointer;
+    border: var(--accent-color) 2px solid;
+    background-color: var(--backgd-color);
+    font-size: 14px;
+    font-family: var(--accent-font);
+
+    &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: width 0.5s ease-in-out;
+        background-color: var(--accent-color);
+        width: 0;
+        height: 100%;
+        content: '';
+    }
+
+    &:hover {
+        &::after {
+            width: 100%;
+        }
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 2px 2px var(--accent-color);
+    }
+
+    span {
+        position: relative;
+        z-index: 1;
+        mix-blend-mode: difference;
+        color: var(--mix-blend-mode-color);
+    }
+}

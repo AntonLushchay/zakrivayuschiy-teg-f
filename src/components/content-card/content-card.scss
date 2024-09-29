@@ -2,9 +2,10 @@
 
 @import './card-data';
 @import './animations.scss';
+@import '../../util-scss/mixins.scss';
 
 .card {
-    margin-top: 50.5px;
+    margin-top: 51px;
     border: var(--accent-color) 2px solid;
     background-color: var(--backgd-color);
     width: 100%;
@@ -12,8 +13,7 @@
 
     &__title {
         border-bottom: var(--accent-color) 2px solid;
-        padding: 4.5px 10px;
-        font-weight: var(--title-font-weight);
+        padding: 5px 10px;
     }
 
     &__image-wrapper {
@@ -24,6 +24,7 @@
             position: absolute;
             top: 23px;
             right: 10px;
+            opacity: 0.5;
             z-index: 1;
             mix-blend-mode: hard-light;
             color: var(--accent-color);
@@ -50,6 +51,7 @@
 
     &__image {
         display: block;
+        object-fit: cover;
     }
 
     &__text {
@@ -58,20 +60,21 @@
         gap: 27px;
         padding: 25px;
         line-height: 20.9px;
+        font-variation-settings: 'wght' var(--text-font-weight);
     }
 
     &__like-itemes {
         display: flex;
         justify-content: end;
         align-items: center;
-        gap: 12px;
+        gap: 6px;
         padding-right: 25px;
         padding-bottom: 25px;
 
         &__heart_wrapper {
             transition:
                 outline 0.3s,
-                outline-offset 0.3s;
+                outline-offset 0.3s ease;
             cursor: pointer;
             outline-offset: -30px;
             border: none;
@@ -79,94 +82,20 @@
             width: 38px;
             height: 36px;
 
-            svg {
-                &:hover {
-                    --svg-main-body-color: var(--accent-color);
-                    --svg-core-color: var(--accent-color);
-                    --svg-transition-main-body: fill 0.3s 0.05s;
-                    --svg-transition-core: fill 0.3s;
-                }
-
-                &:active {
-                    --svg-main-body-color: var(--svg-red-color);
-                    --svg-core-color: var(--svg-red-color);
-                    --svg-transition-main-body: fill 0.3s 0.05s;
-                    --svg-transition-core: fill 0.3s;
-                }
-            }
-
-            .is-liked {
-                --svg-main-body-color: var(--svg-red-color);
-                --svg-core-color: var(--svg-red-color);
-                --svg-contour-color: var(--svg-red-color);
-
-                animation:
-                    scale-heart 0.3s ease-in 0.1s forwards,
-                    spark-opacity 0.3s ease-in 0.03s forwards;
-
-                &:hover {
-                    --svg-main-body-color: var(--svg-red-color);
-                    --svg-core-color: var(--svg-red-color);
-                }
-            }
-
-            &:focus {
-                outline: none;
-            }
-
-            &:focus-visible {
-                outline: 2px solid var(--accent-color);
-                outline-offset: -1px;
-            }
+            @include heart-animation;
         }
 
         &__like-button {
-            position: relative;
-            transition:
-                color 0.5s,
-                box-shadow 0.3s;
-            cursor: pointer;
-            border: var(--accent-color) 2px solid;
-            background: transparent;
             width: 130px;
             height: 38px;
-            font-size: 14px;
-            font-family: var(--accent-font);
 
-            &::after {
-                position: absolute;
-                top: 0;
-                left: 0;
-                transition: width 0.3s;
-                background-color: var(--accent-color);
-                width: 0;
-                height: 100%;
-                content: '';
-            }
-
-            &:hover {
-                &::after {
-                    width: 100%;
-                }
-            }
-
-            &:focus {
-                outline: none;
-                box-shadow: 2px 2px var(--accent-color);
-            }
-
-            span {
-                position: relative;
-                z-index: 1;
-                mix-blend-mode: difference;
-                color: var(--mix-blend-mode-color);
-            }
+            @include button-animation;
         }
     }
 }
 
 @each $filter, $blur in $img-filter {
-    .img-#{$filter} {
+    .filter-#{$filter} {
         filter: $blur;
     }
 }

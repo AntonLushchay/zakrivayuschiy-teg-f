@@ -10,9 +10,9 @@
     --backgd-color: #fff;
     --text-stroke-color: rgba(255 255 255 / 50%);
     --mix-blend-mode-color: #fff;
-    --svg-contour-color: rgba(0, 0, 0, 1);
-    --svg-main-body-color: rgba(0, 0, 0, 0);
-    --svg-core-color: rgba(0, 0, 0, 0);
+    --svg-default-contour-color: rgba(0, 0, 0, 1);
+    --svg-default-main-body-color: rgba(0, 0, 0, 0);
+    --svg-default-core-color: rgba(0, 0, 0, 0);
 }
 
 :root.theme-dark {
@@ -25,9 +25,9 @@
     --backgd-color: #000;
     --text-stroke-color: rgba(0 0 0 / 50%);
     --mix-blend-mode-color: #00cc14;
-    --svg-contour-color: rgba(0, 204, 20, 1);
-    --svg-main-body-color: rgba(0, 204, 20, 0);
-    --svg-core-color: rgba(0, 204, 20, 0);
+    --svg-default-contour-color: rgba(0, 204, 20, 1);
+    --svg-default-main-body-color: rgba(0, 0, 0, 0);
+    --svg-default-core-color: rgba(0, 0, 0, 0);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -41,8 +41,8 @@
         --backgd-color: #000;
         --text-stroke-color: rgba(0 0 0 / 50%);
         --mix-blend-mode-color: #00cc14;
-        --svg-contour-color: rgba(0, 204, 20, 1);
-        --svg-main-body-color: rgba(0, 204, 20, 0);
-        --svg-core-color: rgba(0, 204, 20, 0);
+        --svg-default-contour-color: rgba(0, 204, 20, 1);
+        --svg-default-main-body-color: rgba(0, 0, 0, 0);
+        --svg-default-core-color: rgba(0, 0, 0, 0);
     }
 }
