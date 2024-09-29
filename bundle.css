@@ -121,16 +121,7 @@ ol {
     --svg-default-core-color: rgba(0, 0, 0, 0);
   }
 }
-/* Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
+/*
  COMMON STYLES
 */
 .page {
@@ -164,6 +155,44 @@ ol {
   padding: 0;
 }
 
+.animated-button {
+  position: relative;
+  -webkit-transition: -webkit-box-shadow 0.3s;
+  transition: -webkit-box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
+  cursor: pointer;
+  border: var(--accent-color) 2px solid;
+  background-color: var(--backgd-color);
+  font-size: 14px;
+  font-family: var(--accent-font);
+}
+.animated-button::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+  background-color: var(--accent-color);
+  width: 0;
+  height: 100%;
+  content: "";
+}
+.animated-button:hover::after {
+  width: 100%;
+}
+.animated-button:focus {
+  outline: none;
+  -webkit-box-shadow: 2px 2px var(--accent-color);
+          box-shadow: 2px 2px var(--accent-color);
+}
+.animated-button span {
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
+  color: var(--mix-blend-mode-color);
+}
+
 .visually-hidden {
   position: absolute;
   inline-size: 1px;
@@ -185,6 +214,15 @@ ol {
     left: -16px;
   }
 }
+/* 
+EXTEND
+
+Если раскоменнитровать extend в content-card.scss, bottom-buttom.scss и dialog.scss,
+и этот эстенд ниже (в файде mixins.scss), то анимация к кнопкам будет работать
+и мне так нравится больше. Но так как на ревью была просьбы добавить общий класс,
+то к кнопкам в content-card.pug, bottom-buttom.pug и dialog.pug
+добавлен класс animated-button, а в файле common.scss описан этот общий класс.
+*/
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -333,6 +371,15 @@ ol {
     fill: var(--svg-red-color);
   }
 }
+/* 
+EXTEND
+
+Если раскоменнитровать extend в content-card.scss, bottom-buttom.scss и dialog.scss,
+и этот эстенд ниже (в файде mixins.scss), то анимация к кнопкам будет работать
+и мне так нравится больше. Но так как на ревью была просьбы добавить общий класс,
+то к кнопкам в content-card.pug, bottom-buttom.pug и dialog.pug
+добавлен класс animated-button, а в файле common.scss описан этот общий класс.
+*/
 .card {
   margin-top: 51px;
   border: var(--accent-color) 2px solid;
@@ -506,41 +553,6 @@ ol {
 .card__like-itemes__like-button {
   width: 130px;
   height: 38px;
-  position: relative;
-  -webkit-transition: -webkit-box-shadow 0.3s;
-  transition: -webkit-box-shadow 0.3s;
-  transition: box-shadow 0.3s;
-  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
-  cursor: pointer;
-  border: var(--accent-color) 2px solid;
-  background-color: var(--backgd-color);
-  font-size: 14px;
-  font-family: var(--accent-font);
-}
-.card__like-itemes__like-button::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-transition: width 0.5s ease-in-out;
-  transition: width 0.5s ease-in-out;
-  background-color: var(--accent-color);
-  width: 0;
-  height: 100%;
-  content: "";
-}
-.card__like-itemes__like-button:hover::after {
-  width: 100%;
-}
-.card__like-itemes__like-button:focus {
-  outline: none;
-  -webkit-box-shadow: 2px 2px var(--accent-color);
-          box-shadow: 2px 2px var(--accent-color);
-}
-.card__like-itemes__like-button span {
-  position: relative;
-  z-index: 1;
-  mix-blend-mode: difference;
-  color: var(--mix-blend-mode-color);
 }
 
 .filter-opacity100 {
@@ -589,6 +601,15 @@ ol {
   }
 }
 /* bottom-button */
+/* 
+EXTEND
+
+Если раскоменнитровать extend в content-card.scss, bottom-buttom.scss и dialog.scss,
+и этот эстенд ниже (в файде mixins.scss), то анимация к кнопкам будет работать
+и мне так нравится больше. Но так как на ревью была просьбы добавить общий класс,
+то к кнопкам в content-card.pug, bottom-buttom.pug и dialog.pug
+добавлен класс animated-button, а в файле common.scss описан этот общий класс.
+*/
 .bottom-button-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -616,41 +637,6 @@ ol {
   margin-bottom: 100px;
   width: 306px;
   height: 84px;
-  position: relative;
-  -webkit-transition: -webkit-box-shadow 0.3s;
-  transition: -webkit-box-shadow 0.3s;
-  transition: box-shadow 0.3s;
-  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
-  cursor: pointer;
-  border: var(--accent-color) 2px solid;
-  background-color: var(--backgd-color);
-  font-size: 14px;
-  font-family: var(--accent-font);
-}
-.bottom-button-wrapper__button::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-transition: width 0.5s ease-in-out;
-  transition: width 0.5s ease-in-out;
-  background-color: var(--accent-color);
-  width: 0;
-  height: 100%;
-  content: "";
-}
-.bottom-button-wrapper__button:hover::after {
-  width: 100%;
-}
-.bottom-button-wrapper__button:focus {
-  outline: none;
-  -webkit-box-shadow: 2px 2px var(--accent-color);
-          box-shadow: 2px 2px var(--accent-color);
-}
-.bottom-button-wrapper__button span {
-  position: relative;
-  z-index: 1;
-  mix-blend-mode: difference;
-  color: var(--mix-blend-mode-color);
 }
 .bottom-button-wrapper__button svg {
   z-index: 1;
@@ -718,41 +704,6 @@ ol {
 .dialog .dialog-wrapper .button-wrapper button {
   width: 100%;
   height: 38px;
-  position: relative;
-  -webkit-transition: -webkit-box-shadow 0.3s;
-  transition: -webkit-box-shadow 0.3s;
-  transition: box-shadow 0.3s;
-  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
-  cursor: pointer;
-  border: var(--accent-color) 2px solid;
-  background-color: var(--backgd-color);
-  font-size: 14px;
-  font-family: var(--accent-font);
-}
-.dialog .dialog-wrapper .button-wrapper button::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-transition: width 0.5s ease-in-out;
-  transition: width 0.5s ease-in-out;
-  background-color: var(--accent-color);
-  width: 0;
-  height: 100%;
-  content: "";
-}
-.dialog .dialog-wrapper .button-wrapper button:hover::after {
-  width: 100%;
-}
-.dialog .dialog-wrapper .button-wrapper button:focus {
-  outline: none;
-  -webkit-box-shadow: 2px 2px var(--accent-color);
-          box-shadow: 2px 2px var(--accent-color);
-}
-.dialog .dialog-wrapper .button-wrapper button span {
-  position: relative;
-  z-index: 1;
-  mix-blend-mode: difference;
-  color: var(--mix-blend-mode-color);
 }
 
 @media (width > 375px) {
