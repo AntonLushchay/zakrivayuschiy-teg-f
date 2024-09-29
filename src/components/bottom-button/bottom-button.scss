@@ -17,7 +17,7 @@
         width: 306px;
         height: 84px;
 
-        @include button-animation;
+        // @extend %button-animation;
 
         svg {
             z-index: 1;

@@ -1,13 +1,4 @@
-/* Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
+/*
  COMMON STYLES
 */
 
@@ -31,6 +22,45 @@
     display: flex;
     margin: 0;
     padding: 0;
+}
+
+.animated-button {
+    position: relative;
+    transition: box-shadow 0.3s;
+    cursor: pointer;
+    border: var(--accent-color) 2px solid;
+    background-color: var(--backgd-color);
+    font-size: 14px;
+    font-family: var(--accent-font);
+
+    &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: width 0.5s ease-in-out;
+        background-color: var(--accent-color);
+        width: 0;
+        height: 100%;
+        content: '';
+    }
+
+    &:hover {
+        &::after {
+            width: 100%;
+        }
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 2px 2px var(--accent-color);
+    }
+
+    span {
+        position: relative;
+        z-index: 1;
+        mix-blend-mode: difference;
+        color: var(--mix-blend-mode-color);
+    }
 }
 
 .visually-hidden {

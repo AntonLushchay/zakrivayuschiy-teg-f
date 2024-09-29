@@ -1,4 +1,5 @@
 /* POPUP */
+
 .dialog {
     border: var(--accent-color) 2px solid;
     background-color: var(--backgd-color);
@@ -39,7 +40,7 @@
                 width: 100%;
                 height: 38px;
 
-                @include button-animation;
+                // @extend %button-animation;
             }
         }
     }

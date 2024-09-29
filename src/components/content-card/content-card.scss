@@ -89,7 +89,7 @@
             width: 130px;
             height: 38px;
 
-            @include button-animation;
+            // @extend %button-animation;
         }
     }
 }
