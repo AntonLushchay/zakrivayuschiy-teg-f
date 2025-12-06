@@ -3,6 +3,7 @@
 ![Статус проекта](https://img.shields.io/badge/Status-Completed-success)
 ![Project Status](https://img.shields.io/badge/status-educational-orange)
 ![CI/CD](https://img.shields.io/badge/deploy-GitHub%20Pages-blue)
+![Gulp](https://img.shields.io/badge/Build%20Tool-Gulp-brightgreen)
 
 Учебный веб-проект, созданный для отработки навыков адаптивной верстки и взаимодействия с пользователем.
 
