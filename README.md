@@ -1,4 +1,4 @@
-# Закрывающий тег (Closing Tag)
+# Закрывающий тег
 
 ![Статус проекта](https://img.shields.io/badge/Status-Completed-success)
 ![Project Status](https://img.shields.io/badge/status-educational-orange)
@@ -32,7 +32,7 @@
 **Инструменты сборки и автоматизации:**
 *   **Gulp** (Task runner для сборки проекта)
 
-**Качество кода (Code Quality):**
+**Качество кода:**
 *   **Stylelint** (Линтер для стилей, конфиг `stylelint-config-standard-scss`)
 *   **Prettier** (Форматирование кода)
 *   **BEM** (Методология именования классов)
