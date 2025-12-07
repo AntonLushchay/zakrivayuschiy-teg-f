@@ -1,9 +1,16 @@
 # Закрывающий тег
 
-![Статус проекта](https://img.shields.io/badge/Status-Completed-success)
-![Project Status](https://img.shields.io/badge/status-educational-orange)
+![Status](https://img.shields.io/badge/status-Completed-darkgreen)
+![Type](https://img.shields.io/badge/type-Educational-orange)
 ![CI/CD](https://img.shields.io/badge/deploy-GitHub%20Pages-blue)
-![Gulp](https://img.shields.io/badge/Build%20Tool-Gulp-brightgreen)
+![Audience](https://img.shields.io/badge/audience-Portfolio-purple)
+
+![Pug](https://img.shields.io/badge/Pug-444444?logo=pug)
+![SCSS](https://img.shields.io/badge/SCSS-444444?logo=sass)
+![BEM](https://img.shields.io/badge/BEM-444444)
+![Gulp](https://img.shields.io/badge/Gulp-444444?logo=gulp)
+![Prettier](https://img.shields.io/badge/Prettier-444444?logo=prettier)
+![Stylelint](https://img.shields.io/badge/Stylelint-444444?logo=stylelint)
 
 Учебный веб-проект, созданный для отработки навыков адаптивной верстки и взаимодействия с пользователем.
 
